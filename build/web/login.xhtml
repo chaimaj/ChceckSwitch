@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+     <link rel="stylesheet" type="text/css" href="css/red.css" /> 
+     <link rel="stylesheet" type="text/css" href="css/login.css" />
+        <title>Connexion</title>
+    </h:head>
+ <body> 
+ 
+       <h:form>
+    
+
+   <div style="padding: 100px 450px 0 250px;">  
+       <div id="login-box">
+       <div id="login-box"> 
+           <h1><div style="padding: 20px 0 20px 20px;">Authentification</div></h1>
+            <table>
+                <tr>
+                    <center>
+                    <td><div id="login-box-name" style="margin-top:20px;  font-family:  'Times New Roman' ; font-size: large" ><B>Login:</B></div></td>
+     
+                  <td>   
+                          <div id="ss">
+                              <h:inputText value="#{user.login}" size="30" /></div></td>
+                      <f:param name="login" value="#{user.login}"></f:param>
+                    </center>
+                </tr>
+                <tr>
+                    <td  > <div id="login-box-name" style="  font-family:  'Times New Roman' ; font-size: large" ><B>Password:</B></div> </td>
+                    <td> <div id="login-box-field">
+                            <div id="input">  <h:inputSecret value="#{user.passwd}" size="30" />
+                            </div></div></td>
+                       <f:param name="login" value="#{user.passwd}"></f:param>
+                </tr>
+               
+            </table>
+            <p>
+              
+                <center><h:commandButton value="login" image="css/images/log.PNG" action="#{Operation.verif_auth}"/></center></p>
+       </div> 
+            </div>
+   </div>
+             <h:messages showDetail="true" id="mess" />
+        </h:form>
+      
+    </body>
+</html>
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="robots" content="All" />
+        <title>menu</title>
+        <link href="css/dcaccordion.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="css/red.css" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script type='text/javascript' src='js/jquery.cookie.js'></script>
+        <script type='text/javascript' src='js/jquery.hoverIntent.minified.js'></script>
+        <script type='text/javascript' src='js/jquery.dcjqaccordion.2.7.min.js'></script>
+        <script type="text/javascript">
+        $(document).ready(function($){
+                                                $('#accordion-1').dcAccordion({
+                                                        eventType: 'click',
+                                                        autoClose: true,
+                                                        saveState:false,
+                                                        disableLink: true,
+                                                        speed: 'slow',
+                                                        showCount: false,
+                                                        autoExpand: false,
+                                                        cookie	: 'dcjq-accordion-1',
+                                                        classExpand	 : 'dcjq-current-parent'
+                                                })
+				
+        });
+        
+        </script>
+
+    </head>
+    <body>
+        <h:form>
+            <div class="wrap">
+
+                <div class="graphite demo-container">
+
+                    <ul class="accordion" id="accordion-1">
+                        <li class="button"><a href="#" class="rosso">Presentation</a></li>
+                        <li class="button"><a href="#" class="rosso">Categorie</a><ul>
+<!-- lister les categorie dynamiquement-->
+                                <h:dataTable   var="un" value="#{op_switch.Liste_categorie()}">
+
+                                    <h:column> 
+
+
+                                        <li class="button">
+                                            <a href="#" class="gris"><h:outputText value="#{un}"  /> 
+
+                                            </a>
+                                            <ul>
+                                                <li><h:link value="Par Switch" outcome="affiche_one.xhtml" target="droite" onclick="parent.window.droite.location='affiche_one.xhtml'" >
+                                                        <f:param name="categorie" value="#{un}"></f:param>    
+                                                    </h:link></li>
+
+
+                                                <li class="button"><a href="#" class="clair"> All</a><ul>
+                                                        <li>
+                                                            <h:link value="Log" outcome="All_Log.xhtml" target="droite" onclick="parent.window.droite.location='All_Log.xhtml'" >
+                                                                <f:param name="categorie" value="#{un}"></f:param>    
+                                                            </h:link>    </li>    
+                                                        <li>
+                                                            <h:link value="CPU" outcome="All_CPU.xhtml" target="droite" onclick="parent.window.droite.location='All_CPU.xhtml'" >
+                                                                <f:param name="categorie" value="#{un}"></f:param>    
+                                                            </h:link>    </li>    
+                                                        <li>
+                                                            <h:link value="Error" outcome="All_Error.xhtml" target="droite" onclick="parent.window.droite.location='All_Error.xhtml'" >
+                                                                <f:param name="categorie" value="#{un}"></f:param>    
+                                                            </h:link>    </li> 
+                                                        <li><h:link value="All_command" outcome="All_switch.xhtml" target="droite" onclick="parent.window.droite.location='All_switch.xhtml'" >
+                                                                <f:param name="categorie" value="#{un}"></f:param>    
+                                                            </h:link>    </li>  
+                                                    </ul>
+
+
+                                                </li>
+
+
+
+
+                                            </ul>
+                                        </li>
+
+
+                                    </h:column>
+
+                                </h:dataTable>
+   </ul>
+                            
+              <li   class="button"><a href="#" class="rosso">Gestion users</a><ul>
+                                <li><a href="ajout_user.xhtml" class="gris" target="droite" onclick="parent.window.droite.location='ajout_user.xhtml'">ajouter</a></li>
+                                <li><a href="supprimer_user.xhtml" class="gris" target="droite" onclick="parent.window.droite.location='supprimer_user.xhtml'">supprimer</a></li>
+
+                            </ul></li>  <li   class="button"><a href="#" class="rosso">Gestion switchs</a><ul>
+                                <li><a href="ajout_switch.xhtml"  class="gris" target="droite" onclick="parent.window.droite.location='ajout_switch.xhtml'">ajouter switch</a></li> 
+                                <li><a href="ajout_categorie.xhtml"  class="gris" target="droite" onclick="parent.window.droite.location='ajout_categorie.xhtml'">ajouter categorie</a></li>
+                                <li><a href="supprimer_switch.xhtml" class="gris" target="droite" onclick="parent.window.droite.location='supprimer_switch.xhtml'">supprimer</a></li>
+
+                            </ul></li>
+
+                        <li class="button"><a href="affiche_log.xhtml" class="rosso" onclick="parent.window.droite.location='affiche_log.xhtml'">fichiers log</a>
+                        </li>	
+                        <li class="button"><a href="http://www.tunisiana.com/tunisiana/Tunisiana/contact" onclick="parent.window.location='http://www.tunisiana.com/tunisiana/Tunisiana/contact'" class="rosso">contact us</a></li>			
+
+                        <li class="button"><a href="login.xhtml" onclick="parent.window.location='login.xhtml'" class="rosso">quitter l'application</a></li>	
+
+
+            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+                <div class="clear"></div>
+        
+            <div style="height: 350px;"></div>
+        </h:form>
+
+    </body>
+</html>

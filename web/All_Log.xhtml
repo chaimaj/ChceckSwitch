@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/red.css" />
+        <title>TODO supply a title</title>
+    </head>
+    <body>
+    <form action="Fond.xhtml">
+
+        <br></br>
+
+        <h:outputLabel  style="margin-top:20px;  font-family:  'Times New Roman' ; color:grey; font-size: x-large" ><B>Résultat après filtrage</B> </h:outputLabel>
+
+        <br></br> 
+
+
+        <h:inputTextarea   cols="120" rows="30" value="#{Operation.all_log()}" > 
+        </h:inputTextarea>
+          <input type="image" name="img_envoi" src="css/images/retour.png"></input>
+    </form>
+    <br></br>
+   
+</body>
+</html>

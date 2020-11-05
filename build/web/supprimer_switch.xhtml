@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+           <link rel="stylesheet" type="text/css" href="css/red.css" />
+          <link href="css/tableau.css" rel="stylesheet" type="text/css" />
+        <title>TODO supply a title</title>
+    </head>
+    <body>
+      <h:form>
+          <br></br>
+            
+              <h:outputLabel  style="margin-top:20px;  font-family:  'Times New Roman' ; color:grey; font-size: x-large" ><B>Liste des switchs</B> </h:outputLabel>
+     <br></br> <br></br> <br></br>
+   
+        <h:dataTable   styleClass="people" border="1"  var="un" value="#{op_switch.Liste_all()}" rowClasses="odd,even"
+	columnClasses="name,phoneNumber,dateOfBirth">
+            
+            <h:column> 
+
+                <f:facet name="header">
+                    <h:outputText value="Hostname" />
+                </f:facet>
+                <h:outputText value="#{un.hostname}" />
+            </h:column>
+            <h:column> 
+
+                <f:facet name="header">
+                    <h:outputText value="adrIP" />
+                </f:facet>
+                <h:outputText value="#{un.adrIP}" />
+            </h:column>
+              <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Site" />
+                </f:facet>
+                <h:outputText value="#{un.site}" />
+
+            </h:column>
+            <h:column> 
+                
+
+                <f:facet name="header">
+                    <h:outputText value="Categorie" />
+                </f:facet>
+                <h:outputText value="#{un.categorie}" />
+            </h:column>
+          
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="" />
+                </f:facet>
+                <h:commandButton value="Supprimer"  image="css/images/supprimer.png" action="#{ajout.supprimer()}">
+                   
+
+
+                    <f:param name="identifiant" value="#{un.id}"></f:param>   
+                  
+
+                </h:commandButton>
+            
+
+            </h:column>
+            
+
+        </h:dataTable>
+          
+    <br></br>
+      <h:commandButton value="retour " image="css/images/retour.png" action="Fond.xhtml" ></h:commandButton>
+    </h:form>   </body>
+</html>

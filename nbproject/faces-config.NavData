@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="All_CPU.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="login.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="affiche_one.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="All_Error.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="titre.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="All_switch.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="ajout_switch.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="ajout_user.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="supprimer_user.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="Fond.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="All_Log.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="supprimer_switch.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="ajout_categorie.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="menu.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="red_menu.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="affiche_log.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="home.xhtml" x="150" y="600" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>
