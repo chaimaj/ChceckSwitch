@@ -1,0 +1,274 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Colorful Content Accordion | Tutorialzine demo</title>
+
+        <link rel="stylesheet" type="text/css" href="css/red.css" />
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.easing.1.3.js"></script>
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+                /* This code is executed after the DOM has been completely loaded */
+
+                /* Changing thedefault easing effect - will affect the slideUp/slideDown methods: */
+                $.easing.def = "easeOutBounce";
+
+                /* Binding a click event handler to the links: */
+                $('li.button a').click(function(e){
+	
+                        /* Finding the drop down list that corresponds to the current section: */
+                        var dropDown = $(this).parent().next();
+		
+                        /* Closing all other drop down sections, except the current one */
+                        $('.dropdown').not(dropDown).slideUp('slow');
+                        dropDown.slideToggle('slow');
+		
+                        /* Preventing the default event (which would be to navigate the browser to the link's address) */
+                        e.preventDefault();
+                })
+	
+        });
+        function GereChkbox(conteneur, a_faire) {
+    
+        (document.getElementById("all").checked)
+        var blnEtat=null;
+        var Chckbox = document.getElementById(conteneur).firstChild;
+                while (Chckbox!=null) {
+                        if (Chckbox.nodeName=="INPUT")
+                                if (Chckbox.getAttribute("type")=="checkbox") {
+                                        blnEtat = (!(document.getElementById("all").checked)) ? false : (a_faire=='1') ? true : (document.getElementById(Chckbox.getAttribute("id")).checked) ? false : true;
+                                        document.getElementById(Chckbox.getAttribute("id")).checked=blnEtat;
+                                }
+                        Chckbox = Chckbox.nextSibling;
+                }
+        }
+        //-->
+
+        </script>
+    </head>
+    <body>
+
+
+
+
+            <ul class="container">
+                <li class="menu">
+
+                    <ul>
+                        <li class="button"><a href="#" class="red">Presentation<span></span></a> </li>
+
+
+
+                    </ul>
+
+                </li>
+
+                <li class="menu">
+
+                    <ul>
+                        <li class="button"><a href="#" class="red">BSC</a></li>
+
+                        <li class="dropdown">
+                            <ul>
+                                <li><label for="all">all&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" name="all" id="all" value="1" onClick="GereChkbox('BSC','1');" /> </li>
+
+                                <h:dataTable value="#{op_switch.ListeBSC()}" var="item">
+
+
+
+                                    <div id="BSC">  
+
+
+
+                                        <h:column> 
+
+
+                                             <li><h:outputText value="#{item.hostname}"  /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                 <input type="checkbox" name="#{item.hostname}" id="#{item.id}" value="#{item.id}"  /> </li>
+                                          
+
+
+
+                                        </h:column>
+                                    </div>
+                                </h:dataTable> 
+
+
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <li class="menu">
+
+                    <ul>
+                        <li class="button"><a href="#" class="red">Flexi<span></span></a></li>
+
+                        <li class="dropdown">
+                            <ul>
+ <li><label for="checkbox1">all&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" name="all" id="all" value="1" onClick="GereChkbox('FLEXI','1');" /> </li>
+                                <h:dataTable value="#{op_switch.ListeFLEXI()}" var="item">
+                                    <h:column> 
+                                          <li><h:outputText value="#{item.hostname}"  /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                              <input type="checkbox" name="#{item.hostname}" id="hj" value="1" /> </li>
+                                    </h:column>
+
+                                </h:dataTable> 
+
+
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <li class="menu">
+
+                    <ul>
+                        <li class="button"><a href="#" class="red">NTHLR <span></span></a></li>
+                        <li class="dropdown">
+                            <ul>
+ <li><label for="checkbox1">all&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" name="all" id="all" value="1" onClick="GereChkbox('NTHLR','1');" /> </li>
+                                <h:dataTable value="#{op_switch.ListeNTHLR()}" var="item">
+                                    <h:column> 
+                                         <li><h:outputText value="#{item.hostname}"  /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                             <input type="checkbox" name="#{item.hostname}" id="hj" value="1" /> </li>
+                                    </h:column>
+
+                                </h:dataTable> 
+
+
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <li class="menu">
+                    <ul>
+                        <li class="button"><a href="#" class="red">PACO<span></span></a></li>
+                        <li class="dropdown">
+                            <ul>
+ <li><label for="checkbox1">all&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" name="all" id="all" value="1" onClick="GereChkbox('PACO','1');" /> </li>
+                                <h:dataTable value="#{op_switch.ListePACO()}" var="item">
+                                    <h:column> 
+                                          <li><h:outputText value="#{item.hostname}"  /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                              <input type="checkbox" name="#{item.hostname}" id="hj" value="1" /> </li>
+                                    </h:column>
+
+                                </h:dataTable> 
+
+
+
+                            </ul>
+                        </li>
+
+                    </ul>   
+
+                </li>
+
+
+                <li class="menu">
+                    <ul>
+                        <li class="button"><a href="#" class="red">RNC<span></span></a></li>
+
+                        <li class="dropdown">
+                            <ul>
+ <li><label for="checkbox1">all&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" name="all" id="all" value="1" onClick="GereChkbox('RNC','1');" /> </li>
+                                <h:dataTable value="#{op_switch.ListeRNC()}" var="item">
+                                    <h:column> 
+                                        <li><h:outputText value="#{item.hostname}"  /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="checkbox" name="#{item.hostname}" id="hj" value="1" /> </li>
+                                    </h:column>
+
+                                </h:dataTable> 
+
+
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+
+                </li>
+
+
+                <li class="menu">
+                    <ul>
+                        <li class="button"><a href="#" class="red">MAN CAMPUS<span></span></a></li>
+                        <li class="dropdown">
+                            <ul>
+ <li><label for="checkbox1">all&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" name="all" id="all" value="1" onClick="GereChkbox('MAN CAMPUS','1');" /> </li>
+                                <h:dataTable value="#{op_switch.ListeMANCAMPUS()}" var="item">
+                                    <h:column> 
+                                        <li><h:outputText value="#{item.hostname}"  /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="checkbox" name="#{item.hostname}" id="hj" value="1" /> </li>
+                                    </h:column>
+
+                                </h:dataTable> 
+
+
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <li class="menu">
+                    <ul>
+                        <li class="button"><a href="#" class="red">TC <span></span></a></li>
+
+                        <li class="dropdown">
+                              
+
+                            <ul>
+                             
+                            <li><label for="checkbox1">all&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </label><input type="checkbox" name="all" id="all" value="1" onClick="GereChkbox('TC','1');" /> </li>
+                                    <h:dataTable value="#{op_switch.ListeTC()}" var="item"> 
+                          
+                          
+                                  
+                                        <h:column> 
+                                            <li><h:outputText value="#{item.hostname}"  /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="checkbox" name="#{item.hostname}" id="hj" value="1" /> </li>
+                                        </h:column> 
+                                 
+                                </h:dataTable> 
+                                     
+                                    
+
+
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </li>
+            </ul>
+
+            <div class="clear"></div>
+
+        
+    </body>
+</html>

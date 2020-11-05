@@ -1,0 +1,35 @@
+/* 
+    Document   : entete
+    Created on : 13 juil. 2012, 08:12:52
+    Author     : rabeb.amouri.stg
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body{
+    color:#cccccc;
+	font-size:13px;
+	
+	font-family:Arial, Helvetica, sans-serif;
+        width:10px;
+	height: 30px;
+        padding: 12px 10px 0 50px
+}
+#login-box {
+ 
+width: 1300px;
+	height: 200px;
+	 color: #ebebeb;
+
+ font: 12px Arial, Helvetica, sans-serif;
+
+	
+background: url('images/titre.jpg') ;
+background-repeat:no-repeat; 
+background-attachment: fixed;
+}

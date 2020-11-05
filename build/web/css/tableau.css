@@ -1,0 +1,43 @@
+table.people {
+	width: 50%;
+	border-collapse: collapse; /* so we can control cellspacing in a practical way */
+	border-bottom: 1px solid #000;
+}
+
+table.people th,
+table.people td {
+	padding: 5px;
+	text-align: left;
+	font-family: Arial, Verdana, sans-serif;
+	border: 1px solid #000; /* let's apply borders */
+	border-bottom:0;
+}
+
+
+table.people th {
+	background :url('images/rosso.JPG');
+        
+	color: #FFF;
+	border-bottom: 2px solid #000;
+          width: 100px;
+}
+
+table.people tr.odd {
+	background-color: #fff;
+        color:#000;
+        
+      
+}
+
+table.people tr.odd td {
+	border-top: 1px solid #000;
+}
+
+table.people tr.even {
+	background-color: #FBFBFB;
+        color:#000;
+}
+
+table.people tr.even td {
+	border-top: 1px solid #DC9F8C;
+}

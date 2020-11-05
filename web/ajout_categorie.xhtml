@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/red.css" />
+        <title>TODO supply a title</title>
+ 
+    </head>
+    <body>
+    <h:form onsubmit="">
+        <center>
+        <table>
+            <tr><td><div  style="margin-top:20px;  font-family:  'Times New Roman' ;color:grey; font-size: x-large" ><B>Veuillez saisir la categorie</B></div></td></tr>
+            <tr>
+                <td>
+            <h:outputLabel style="margin-top:20px;  font-family:  'Times New Roman' ;color:grey; font-size: large" ><B>Categorie *</B></h:outputLabel>
+        </td>     <td>
+    <h:inputText value="#{switch1.categorie}">
+    </h:inputText> 
+
+
+    </td> 
+    </tr>
+     <tr><td><div  style="margin-top:20px;  font-family:  'Times New Roman' ;color:grey; font-size: x-large" ><B>Veuillez saisir un switch dans cette categorie</B></div></td></tr>
+    <tr>
+
+
+        <td>
+    <h:outputLabel style="margin-top:20px;  font-family:  'Times New Roman' ;color:grey; font-size: large" ><B>Hostname *</B></h:outputLabel>
+    </td>
+    <td>
+    <h:inputText value="#{switch1.hostname}">
+    </h:inputText>
+    </td>
+    </tr>
+    <tr>
+        <td>
+    <h:outputLabel style="margin-top:20px;  font-family:  'Times New Roman' ;color:grey; font-size: large" ><B>Adresse IP *</B></h:outputLabel>
+</td>  <td>
+<h:inputText value="#{switch1.addrip}">
+</h:inputText></td>
+</tr>
+<tr>
+    <td>
+<h:outputLabel style="margin-top:20px;  font-family:  'Times New Roman' ;color:grey; font-size: large" ><B>Site *</B></h:outputLabel>
+</td>  <td>
+<h:inputText value="#{switch1.site}">
+
+</h:inputText> </td> 
+</tr>
+
+<tr>
+    <td>
+<h:outputLabel style="margin-top:20px;  font-family:  'Times New Roman' ;color:grey; font-size: large" ><B>Commande log *</B></h:outputLabel>
+</td> 
+<td>
+<h:inputText value="#{switch1.log}">
+</h:inputText>   </td> 
+</tr>
+<tr>
+    <td>      <h:outputLabel style="margin-top:20px;  font-family:  'Times New Roman' ;color:grey; font-size: large" ><B>Commande error *</B></h:outputLabel>  </td> 
+
+
+<td>
+<h:inputText value="#{switch1.error}">
+</h:inputText>   </td> 
+</tr>
+<tr>
+    <td> <h:outputLabel style="margin-top:20px;  font-family:  'Times New Roman' ;color:grey; font-size: large" ><B>Commande cpu*</B></h:outputLabel>   </td> 
+<td>  <h:inputText value="#{switch1.cpu}">
+</h:inputText>   </td> 
+</tr>
+</table>
+            <br></br>  <br></br>
+        <h:commandButton value="ajouter " image="css/images/ajouter.png" action="#{ajout.ajouter_categorie()}"></h:commandButton>
+        <h:commandButton value="retour " image="css/images/retour.png" action="Fond.xhtml" ></h:commandButton>
+<h:outputText value="#{ajout.message}" style="margin-top:20px;  font-family:  'Times New Roman' ;color:red; font-size: large"></h:outputText>
+ <h:messages showDetail="true" id="mess" style="margin-top:20px;  font-family:  'Times New Roman' ;color:red; font-size: large"/>
+        </center>
+</h:form>
+</body>
+</html>
